@@ -36,4 +36,4 @@ def download_images(source_type, character_name, p_min_size, p_background, p_cla
 
 
 if __name__ == "__main__":
-    download_images("Danbooru", "sex", "1024", "#FFFFFF", None, [0, 1, 2], 1000)
+    download_images("Danbooru", "sex", "1024", "#FFFFFF", None, [0, 1, 2], 300)

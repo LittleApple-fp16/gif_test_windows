@@ -23,11 +23,11 @@ class WebDataSource(RootDataSource):
         self.group_name = group_name
 
     def _iter_data(self) -> Iterator[Tuple[Union[str, int], str, dict]]:
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     def _iter(self) -> Iterator[ImageItem]:
         for id_, url, meta in self._iter_data():
-            with TemporaryDirectory() as td:
+            with TemporaryDirectory(ignore_cleanup_errors=True) as td:
                 _, ext_name = os.path.splitext(urlsplit(url).filename)
                 filename = f'{self.group_name}_{id_}{ext_name}'
                 td_file = os.path.join(td, filename)
