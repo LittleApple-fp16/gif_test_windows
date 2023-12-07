@@ -101,3 +101,11 @@ jobs:
         shell: bash
         run: |
           python ${{ matrix.code }}.py
+      - name: Check for gif images in cache
+        shell: bash
+        run: |
+            if [ -f "C:\\Users\\*\\AppData\\Local\\Temp\\*\\*.gif" ]; then
+                echo "****GIF images found in cache.****"
+            else
+                echo "No GIF images in cache."
+            fi

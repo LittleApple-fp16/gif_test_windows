@@ -1,10 +1,13 @@
-from typing import Dict, Iterator, Literal
-
 import numpy as np
 from imgutils.metrics import lpips_difference, lpips_extract_feature
 
 from .base import BaseAction
 from ..model import ImageItem
+
+try:
+    from typing import Literal, Dict, Iterator
+except (ImportError, ModuleNotFoundError):
+    from typing_extensions import Literal
 
 
 class FeatureBucket:
