@@ -38,7 +38,6 @@ class WebDataSource(RootDataSource):
                     )
                     image = Image.open(td_file)
                     image.load()
-                    image.close()
                 except UnidentifiedImageError:
                     warnings.warn(f'{self.group_name.capitalize()} resource {id_} unidentified as image, skipped.')
                     continue
@@ -48,3 +47,4 @@ class WebDataSource(RootDataSource):
 
                 meta = {**meta, 'url': url}
                 yield ImageItem(image, meta)
+                image.close()
