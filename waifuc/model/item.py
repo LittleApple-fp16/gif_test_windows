@@ -78,7 +78,6 @@ class ImageItem:
         else:
             meta = {}
 
-        image.close()
         return cls(image, meta)
 
     def save(self, image_file, no_meta: bool = False, skip_when_image_exist: bool = False):

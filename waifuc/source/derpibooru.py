@@ -1,10 +1,15 @@
 import os
-from typing import Literal, Optional, Iterator, Tuple, Union, List
+from typing import Optional, Iterator, Tuple, Union, List
 
 from hbutils.system import urlsplit
 
 from .web import WebDataSource
 from ..utils import get_requests_session, srequest
+
+try:
+    from typing import Literal
+except (ImportError, ModuleNotFoundError):
+    from typing_extensions import Literal
 
 SelectTyping = Literal['thumb', 'small', 'medium', 'large', 'full']
 
